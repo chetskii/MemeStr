@@ -10,8 +10,9 @@
   </head>
 
   <body>
+  <%= render 'partials/navbar' %>
     <div class="container">
-      <%= render 'partials/navbar' %>
+      
 
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>">

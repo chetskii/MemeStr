@@ -13,7 +13,8 @@ class SessionsController < ApplicationController
 
       flash[:success] = "Welcome, #{@user.username}"
       # Redirect to the users profile/show page...
-      redirect_to user_path(@user)
+      # redirect_to user_path(@user)
+      redirect_to user_path @user
     else
       #  Otherwise redirect back to the login form page to try again
       flash[:danger] = 'Incorrect email or password. Please try again'

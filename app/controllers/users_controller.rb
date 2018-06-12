@@ -3,9 +3,13 @@ class UsersController < ApplicationController
   before_action :authorize, only: [:show, :edit, :update, :destroy]
 
   def index
+    # @memes = Meme.all
+    @users = User.all
+    # @memes = Meme.last(3)
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def new
@@ -22,7 +26,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
@@ -34,7 +37,7 @@ class UsersController < ApplicationController
     redirect_to new_user_path
   end
 
-  private # Makes sure only a name, email, password, and password_confirmation can be submitted in the form for security.
+  private # Makes sure only a name, email, password, and password_confirmation can be submitted in the form, for security.
   def user_params
     params.require(:user).permit(:username,:email,:password,:password_confirmation)
     # Password confirmation is a property Bcrypt uses to confirm the user that's signing up entered their password the way they intended.

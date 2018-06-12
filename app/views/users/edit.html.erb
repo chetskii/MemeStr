@@ -1,3 +1,5 @@
 <h1> Edit account </h1>
 
+<% if logged_in?%>
 <%= link_to "Delete Account", user_path(current_user.id), method: "delete" %>
+<% end %>

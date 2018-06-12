@@ -1,4 +1,8 @@
+<h1>Explore the world of Memes!</h1>
 
-<% if logged_in? %>
-<h1> <%= current_user.username %>'s memes </h1>
-<% end %>
+<h3>Recent Meme-ers</h3>
+<ul>
+    <% @users.each do |u| %>
+        <li><%= link_to(u.username, user_path(u)) %></li>
+    <% end %>    
+</ul>
