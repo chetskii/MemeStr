@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  before_action :authorize, only: [:show, :edit, :update, :destroy]
+
   def index
   end
 
@@ -15,20 +18,26 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       redirect_to new_session_path
+    end
   end
 
   def edit
+    @user = User.find(params[:id])
+    @user.edit
   end
 
   def update
   end
 
   def destroy
+    current_user.destroy
+    session[:user_id] = nil
+    redirect_to new_user_path
   end
 
   private # Makes sure only a name, email, password, and password_confirmation can be submitted in the form for security.
   def user_params
-    params.require(:user).permit(:name,:email,:password,:password_confirmation)
+    params.require(:user).permit(:username,:email,:password,:password_confirmation)
     # Password confirmation is a property Bcrypt uses to confirm the user that's signing up entered their password the way they intended.
   end
 end
