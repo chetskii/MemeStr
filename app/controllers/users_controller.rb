@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   before_action :authorize, only: [:show, :edit, :update, :destroy]
 
   def index
-    @memes = Meme.all
     @users = User.all
     @featured = Meme.all.sample(3)
     # @memes = Meme.last(3)
