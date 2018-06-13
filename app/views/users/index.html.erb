@@ -20,7 +20,7 @@
 
 <div class="container">
     <div class="row">
-    <% @featured.in_groups_of(3) do | m1, m2, m3|%>
+    <% @featured.in_groups_of(3) do | m1, m2, m3 |%>
         <div class="col-sm">
             <div class="card" style="width: 18rem;">
                 <%= link_to image_tag(m1.url, class: "card-img-top"), user_path(m1.user) %>
