@@ -11,7 +11,7 @@
 
   <body>
   <%= render 'partials/navbar' %>
-    <div class="container">
+    <div class="container" style="margin-bottom: 100px;">
       
 
       <% flash.each do |key, value| %>
@@ -22,5 +22,6 @@
     
       <%= yield %>
     </div>
+  <%= render 'partials/footer' %>
   </body>
 </html>

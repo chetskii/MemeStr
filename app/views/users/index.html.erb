@@ -1,8 +1,53 @@
-<h1>Explore the world of Memes!</h1>
+<h1></h1>
 
-<h3>Recent Meme-ers</h3>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container-fluid">
+    <h1 class="display-4">MemeStr</h1>
+    <p class="lead">Explore the world of Memes!</p>
+  </div>
+</div>
+
+
+<h3>Explore</h3>
 <ul>
     <% @users.each do |u| %>
-        <li><%= link_to(u.username, user_path(u)) %></li>
+        <li>
+            <%= link_to(u.username, user_path(u)) %>
+        </li>
+        
     <% end %>    
 </ul>
+
+<div class="container">
+    <div class="row">
+    <% @featured.in_groups_of(3) do | m1, m2, m3|%>
+        <div class="col-sm">
+            <div class="card" style="width: 18rem;">
+                <%= link_to image_tag(m1.url, class: "card-img-top"), user_path(m1.user) %>
+                <div class="card-body">
+                    <p class="card-text"><%= m1.caption %></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card" style="width: 18rem;">
+                <%= link_to image_tag(m2.url, class: "card-img-top"), user_path(m2.user) %>
+                <div class="card-body">
+                    <p class="card-text"><%= m2.caption %></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card" style="width: 18rem;">
+                <%= link_to image_tag(m3.url, class: "card-img-top"), user_path(m3.user) %>
+                <div class="card-body">
+                    <p class="card-text"><%= m3.caption %></p>
+                </div>
+            </div>
+        </div>
+    <% end %>
+    </div>
+</div>
+
+
+        
