@@ -1,4 +1,4 @@
-<h1 class="mb-5"> 
+<h1 class="mb-5 font-weight-bold"> 
     <%= @user.username %>'s memes 
 </h1>
 
@@ -7,7 +7,7 @@
     <div class="row mb-5">
         <div class="col-sm">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src=<%=  m1.url %> alt="Card image cap">
+                <img class="card-img-top mh-100" src=<%=  m1.url %> alt="Card image cap">
                 <div class="card-body">
                     <p class="card-text"><%= m1.caption %></p>
                 </div>
@@ -21,11 +21,12 @@
                 <% end %>
                 <% end %>
         </div>
+        <% if m2 %>
         <div class="col-sm">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src=<%=  m1.url %> alt="Card image cap">
+                <img class="card-img-top" src=<%=  m2.url %> alt="Card image cap">
                 <div class="card-body">
-                    <p class="card-text"><%= m1.caption %></p>
+                    <p class="card-text"><%= m2.caption %></p>
                 </div>
             </div>
                 <% if current_user == @user %>
@@ -37,11 +38,13 @@
                 <% end %>
                 <% end %>
         </div>
+        <% end %>
+        <% if m3 %>
         <div class="col-sm">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src=<%=  m1.url %> alt="Card image cap">
+                <img class="card-img-top" src=<%=  m3.url %> alt="Card image cap">
                 <div class="card-body">
-                    <p class="card-text"><%= m1.caption %></p>
+                    <p class="card-text"><%= m3.caption %></p>
                 </div>
             </div>
                 <% if current_user == @user %>
@@ -53,6 +56,7 @@
                 <% end %>
                 <% end %>
         </div>
+        <% end %>
     </div>
     <% end %>
 </div>
