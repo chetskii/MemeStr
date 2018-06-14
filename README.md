@@ -1,6 +1,5 @@
 # <center>MemeStr</center>
 
-Screenshots go here
 ![Page when logged in](https://i.imgur.com/QgZSDyQ.png)
 
 ![Nav bar when logged in](https://i.imgur.com/6ek2nMj.png)
