@@ -21,7 +21,7 @@
 <h4>Recent Memes</h4>
 <div class="container">
     <div class="row">
-    <% @featured.in_groups_of(3, false) do | m1, m2, m3 |%>
+    <% @featured.in_groups_of(3) do | m1, m2, m3 |%>
         <div class="col-sm">
             <div class="card" style="width: 18rem;">
                 <%= link_to image_tag(m1.url, class: "card-img-top"), user_path(m1.user) %>
@@ -30,7 +30,7 @@
                 </div>
             </div>
         </div>
-        
+        <% if m2 %>
         <div class="col-sm">
             <div class="card" style="width: 18rem;">
                 <%= link_to image_tag(m2.url, class: "card-img-top"), user_path(m2.user) %>
@@ -39,6 +39,8 @@
                 </div>
             </div>
         </div>
+        <% end %>
+        <% if m3 %>
         <div class="col-sm">
             <div class="card" style="width: 18rem;">
                 <%= link_to image_tag(m3.url, class: "card-img-top"), user_path(m3.user) %>
@@ -47,6 +49,7 @@
                 </div>
             </div>
         </div>
+        <% end %>
     <% end %>
     </div>
 </div>
