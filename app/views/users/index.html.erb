@@ -1,24 +1,33 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container-fluid">
-    <h1 class="display-4 font-weight-bold">MemeStr</h1>
-    <p class="lead">Explore the world of Memes!</p>
+    <h1 class="display-4 font-weight-bold text-info">MemeStr</h1>
+    <p class="lead text-white">Explore the world of Memes!</p>
   </div>
 </div>
 
-
-<h2>Explore</h2>
-
-    <h4 class="text-right">Recent MemeStrs</h4>
-<ul class="text-right">
-    <% @users.each do |u| %>
-        <li class="text-right">
-            <%= link_to(u.username, user_path(u)) %>
-        </li>
-        
-    <% end %>    
-</ul>
-
-<h4>Recent Memes</h4>
+<div class="container">
+    <div class="row">
+        <h2>Explore</h2>
+    </div>
+<div class="container">
+<br>
+    <div class="row">
+        <div class="col-10">
+            <h4>Newest Memes</h4>
+        </div>
+        <div class="col-2">
+            <h4 class="text-right">New MemeStrs</h4>
+            <ul class="text-right no-bullets list-group ">
+                <% @users.each do |u| %>
+                    <li class="text-right list-group-item list-group-item-info badge badge-secondary">
+                        <%= link_to(u.username, user_path(u), class: "no-decor") %>
+                    </li>
+                <% end %>    
+            </ul>
+        </div>
+    </div>
+<br>
+<h4>Random Memes</h4>
 <div class="container">
     <div class="row">
     <% @featured.in_groups_of(3) do | m1, m2, m3 |%>

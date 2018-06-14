@@ -1,4 +1,4 @@
-<h1 class="mb-5 font-weight-bold"> 
+<h1 class="mb-5"> 
     <%= @user.username %>'s memes 
 </h1>
 
@@ -7,7 +7,7 @@
     <div class="row mb-5">
         <div class="col-sm">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top mh-100" src=<%=  m1.url %> alt="Card image cap">
+                <img class="card-img-top" src=<%= m1.url %> alt="Card image cap">
                 <div class="card-body">
                     <p class="card-text"><%= m1.caption %></p>
                 </div>
@@ -16,15 +16,15 @@
                 <%= link_to "/memes/#{m1.id}", method: 'delete' do %>
                     <button type="button" class="btn btn-outline-secondary">Remove</button>
                 <% end %>
-                <%= link_to edit_meme_path(m1), method: 'edit' do %>
+                <%= link_to edit_meme_path(m1)  do %>
                     <button type="button" class="btn btn-outline-secondary">Edit</button>
                 <% end %>
                 <% end %>
         </div>
-        <% if m2 %>
         <div class="col-sm">
+            <% if m2 %>
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src=<%=  m2.url %> alt="Card image cap">
+                <img class="card-img-top" src=<%= m2.url %> alt="Card image cap">
                 <div class="card-body">
                     <p class="card-text"><%= m2.caption %></p>
                 </div>
@@ -33,16 +33,16 @@
                 <%= link_to "/memes/#{m2.id}", method: 'delete' do %>
                     <button type="button" class="btn btn-outline-secondary">Remove</button>
                 <% end %>
-                <%= link_to edit_meme_path(m2), method: 'edit' do %>
+                <%= link_to edit_meme_path(m2) do %>
                     <button type="button" class="btn btn-outline-secondary">Edit</button>
                 <% end %>
                 <% end %>
+            <% end %>
         </div>
-        <% end %>
-        <% if m3 %>
         <div class="col-sm">
+            <% if m3 %>
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src=<%=  m3.url %> alt="Card image cap">
+                <img class="card-img-top" src=<%= m3.url %> alt="Card image cap">
                 <div class="card-body">
                     <p class="card-text"><%= m3.caption %></p>
                 </div>
@@ -51,12 +51,12 @@
                 <%= link_to "/memes/#{m3.id}", method: 'delete' do %>
                     <button type"button" class="btn btn-outline-secondary">Remove</button>
                 <% end %>
-                <%= link_to "/memes/#{m3.id}", method: 'edit' do %>
+                <%= link_to "/memes/#{m3.id}" do %>
                     <button type="button" class="btn btn-outline-secondary">Edit</button>
                 <% end %>
                 <% end %>
+            <% end %>
         </div>
-        <% end %>
     </div>
     <% end %>
 </div>

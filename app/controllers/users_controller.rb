@@ -2,10 +2,10 @@ class UsersController < ApplicationController
 
   before_action :authorize, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @users = User.all
-    @featured = Meme.all.sample(3)
-    # @memes = Meme.last(3)
+  def index 
+    @users = User.last(5) # Returns last 5 users
+    @featured = Meme.all.sample(3) # Returns 3 random memes from Meme table
+    @new = Meme.last(3) # Returns the last 3 memes from Meme table
   end
 
   def show
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   def update
   end
 
-  def destroy
+  def destroy # Destroys current user and deletes cookie then sends back to signup page
     current_user.destroy
     session[:user_id] = nil
     redirect_to new_user_path
