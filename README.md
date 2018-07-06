@@ -1,28 +1,43 @@
 # <center>MemeStr</center>
 
-Screenshots go here
 ![Page when logged in](https://i.imgur.com/QgZSDyQ.png)
+
+- Page when logged in
 
 ![Nav bar when logged in](https://i.imgur.com/6ek2nMj.png)
 
+- Nav bar when logged in
+
 ![Sign In page](https://i.imgur.com/hAib4sh.png)
+
+- Sign In page
 
 ![Sign Up page](https://i.imgur.com/rhj8rL4.png)
 
+- Sign Up page
+
 ![Current user profile page](https://i.imgur.com/2oOhUdT.png)
+
+- Current user profile page
 
 ![Other user page when logged in](https://i.imgur.com/Zomh85M.png)
 
+- Other user page when logged in
+
 ![Edit account/delete account](https://i.imgur.com/hxuQmUT.png)
 
+- Edit account/delete account
+
 ![Upload a new meme page](https://i.imgur.com/1eq9oFl.png)
+
+- Upload a new meme page
 
 ## About MemeStr
 
 - MemeStr is a site where people are free to "upload" their memes; to share with others or discover new ones!
 - Ever find memes online and want to share with friends, but know they are busy and cannot be distracted by annoying notifications. MemeStr is the perfect place to centralize memes and share with friends! Easily upload your favorite memes and easily share with friends!
 
-## TEch used
+## Tech used
 
 ##### App was created using the following
 -
